@@ -1,6 +1,8 @@
 import pathlib
 import string
+import timeit
 
+start = timeit.default_timer()
 cwd = pathlib.Path(__file__).parent.resolve()
 
 with open(f'{cwd}/input.txt', 'r') as f:
@@ -17,3 +19,7 @@ for el in data:
     score += alphabet_dict.get(item)
 
 print(score)
+
+stop = timeit.default_timer()
+execution_time = stop - start
+print(execution_time)
